@@ -25,4 +25,5 @@ I need to find the right command to show the local VM's ip address so you can co
 
 This has only been tested on a Mac system at this point.  
 
+Another note:  If your running these images on your MAC you will need to adjust your Virtual Box memory settings.  The default boot2docker vm image only has 2 gigs alocated for memory and these images need 2 gigs each.  I think I need to come up with a better solution so its easier to use on smaller dev machines.  To alter your Virtal Box memory settings find the Virtual Box app and run it and then select the boot2docker vm and adjust its settings and add memory. 
 
