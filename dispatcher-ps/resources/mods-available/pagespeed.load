@@ -1,0 +1,16 @@
+# Attempt to load mod_version if it wasn't loaded or compiled in (eg on Debian)
+<IfModule !mod_version.c>
+  LoadModule version_module /usr/lib/apache2/modules/mod_version.so
+</IfModule>
+
+<IfVersion < 2.4>
+  LoadModule pagespeed_module /usr/lib/apache2/modules/mod_pagespeed.so
+</IfVersion>
+<IfVersion >= 2.4.2>
+  LoadModule pagespeed_module /usr/lib/apache2/modules/mod_pagespeed_ap24.so
+</IfVersion>
+
+# Only attempt to load mod_deflate if it hasn't been loaded already.
+<IfModule !mod_deflate.c>
+ LoadModule deflate_module /usr/lib/apache2/modules/mod_deflate.so
+</IfModule>
