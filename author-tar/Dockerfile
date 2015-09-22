@@ -10,12 +10,13 @@ ADD resources/license.properties /aem/license.properties
 
 # Extracts AEM
 WORKDIR /aem
-RUN java -XX:MaxPermSize=256m -Xmx1024M -jar cq-author-4502.jar -unpack -r nosamplecontent
+RUN java -Djava.awt.headless=true -XX:MaxPermSize=256m -Xmx1280m -jar cq-author-4502.jar -unpack -r nosamplecontent
 
 # Add customised log file, to print the logging to standard out.
 ADD resources/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install
 
 # Installs AEM
+WORKDIR /aem
 RUN ["python","aemInstaller.py","-i","cq-author-4502.jar","-r","author","-p","4502"]
 
 WORKDIR /aem/crx-quickstart/bin

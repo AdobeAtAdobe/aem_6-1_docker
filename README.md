@@ -4,9 +4,9 @@ This project holds all our 6.1 AEM docker images we have built so far.  At this 
 
 The easiest way to get start would be to clone this repo then from the cloned root directory run the following command
 ```
-./composedev-tar/makeLocalImages.sh
+./makeLocalImages.sh
 ```
-note: you may need to allow execution on this script (chmod +x ./composedev-tar/makeLocalImages.sh)
+note: you may need to allow execution on this script (chmod +x ./makeLocalImages.sh)
 
 This command will build the base, publisher and author image locally and will prompt you to supply your AEM jar and license file.  Then it will build out the dispatcher image for you.
 

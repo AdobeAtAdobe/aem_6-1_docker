@@ -1,5 +1,5 @@
 # DOCKER-VERSION 1.0.1
-FROM ubuntu-upstart
+FROM ubuntu:14.04
 LABEL version="1.0"
 LABEL description="AEM base image"
 MAINTAINER dbenge
@@ -14,6 +14,7 @@ RUN apt-get -y install software-properties-common
 RUN apt-get -y install ipython ipython3
 RUN apt-get -y install python-psutil
 RUN apt-get -y install python-pycurl
+RUN apt-get -y install libxrender-dev
 
 RUN apt-add-repository -y ppa:webupd8team/java
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y 

@@ -4,7 +4,7 @@ echo "done building Base image"
 
 while true; do
 	echo "Put your AEM jar and your license file in publish-tar/resources directory."
-    read -p "When ready type y and hit enter?" y
+    read -p "When ready type y and hit enter? " y
     case $y in
         [Yy]* ) break;;
         * ) echo "Please answer y when your ready to move foward.";;
@@ -16,7 +16,7 @@ echo "done building Publisher"
 
 while true; do
 	echo "Put your AEM jar and your license file in author-tar/resources directory."
-    read -p "When ready type y and hit enter?" y
+    read -p "When ready type y and hit enter? " y
     case $y in
         [Yy]* ) break;;
         * ) echo "Please answer y when your ready to move foward.";;
