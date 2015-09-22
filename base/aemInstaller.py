@@ -8,9 +8,12 @@ from optparse import OptionParser
 # Argument definition
 usage = "usage: %prog [options] arg"
 parser = OptionParser(usage)
-parser.add_option("-i", "--install_file", dest="filename",help="AEM install file")
-parser.add_option("-r", "--runmode",dest="runmode",help="Run mode for the installation")
-parser.add_option("-p", "--port", dest="port",help="Port for instance")
+parser.add_option("-i", "--install_file", dest="filename",
+                  help="AEM install file")
+parser.add_option("-r", "--runmode",
+                  dest="runmode",help="Run mode for the installation")
+parser.add_option("-p", "--port", dest="port",
+                  help="Port for instance")
 
 options, args = parser.parse_args()
 optDic = vars(options)
@@ -27,7 +30,7 @@ port = optDic.setdefault('port','4503')
 # success message has been recieved.
 #
 # Starts AEM installer
-installProcess = subprocess.Popen(['java','-Xmx1280M','-XX:MaxPermSize=256m','-Djava.awt.headless=true','-jar',fileName, '-listener-port','50007','-r',runmode,'nosample','-p',port,'-nofork'])
+installProcess = subprocess.Popen(['java', '-Xmx1280m', '-XX:MaxPermSize=256m', '-jar', fileName, '-listener-port','50007','-r',runmode,'nosample','-p',port])
 
 # Starting listener
 import socket
@@ -39,16 +42,21 @@ s.listen(1)
 conn, addr = s.accept()
 
 successfulStart = False
+strResult = ""
 while 1:
     data = conn.recv(1024)
     if not data:
+      print "doing break on socket listen"
       break
     else:
-      print str(data)
-      if str(data).strip() == 'started':
+      print "data = %s" %(str(data))
+      strResult = strResult + str(data).strip()
+      print "strResult = %s" %(strResult)
+      if strResult == 'started':
+        print "doing break after successfulStart"
         successfulStart = True
-      break
-    # conn.sendall(data)
+        break
+      #conn.sendall(data)
 conn.close()
 
 #Post install hook
@@ -58,9 +66,9 @@ if os.path.isfile(postInstallHook):
     returncode = subprocess.call(["python", postInstallHook])
     print returncode
 else:
-    print "No post install hook found"
+    print "No install hook found"
 
-print "Successful Start %s" % successfulStart
+
 print "Stopping instance"
 #
 # If the success message was recieved, attempt to close all associated

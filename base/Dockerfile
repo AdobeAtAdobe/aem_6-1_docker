@@ -14,7 +14,7 @@ RUN apt-get -y install software-properties-common
 RUN apt-get -y install ipython ipython3
 RUN apt-get -y install python-psutil
 RUN apt-get -y install python-pycurl
-RUN apt-get -y install libxrender-dev
+#RUN apt-get -y install libxrender-dev
 
 RUN apt-add-repository -y ppa:webupd8team/java
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y 
