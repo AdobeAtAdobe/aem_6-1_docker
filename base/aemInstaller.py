@@ -46,14 +46,14 @@ strResult = ""
 while 1:
     data = conn.recv(1024)
     if not data:
-      print "doing break on socket listen"
+      #print "doing break on socket listen"
       break
     else:
-      print "data = %s" %(str(data))
+      #print "data = %s" %(str(data))
       strResult = strResult + str(data).strip()
-      print "strResult = %s" %(strResult)
+      #print "strResult = %s" %(strResult)
       if strResult == 'started':
-        print "doing break after successfulStart"
+        #print "doing break after successfulStart"
         successfulStart = True
         break
       #conn.sendall(data)
