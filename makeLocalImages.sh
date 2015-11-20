@@ -30,4 +30,4 @@ sh -c 'cd dispatcher-ps/ && exec docker build -t dispatcher_4-1-9 .'
 echo "done building Dispatcher"
 
 sh -c 'cd composedev-tar'
-echo 'Now go into composedev-tar and run this command:docker-compose up -d'
+echo 'Now go into composedev-tar and run this command:./start-aem.sh'
