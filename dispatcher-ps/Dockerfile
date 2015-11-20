@@ -24,6 +24,7 @@ RUN apt-get -y -f install
 # Install dispatcher mod - Linux x86 64bit OpenSSL 1.0
 #ADD https://www.adobeaemcloud.com/content/companies/public/adobe/dispatcher/dispatcher/_jcr_content/top/download_10/file.res/dispatcher-apache2.4-linux-x86-64-ssl10-4.1.9.tar.gz /aem/dispatcher/module/
 # Install dispatcher mod - Linux x86 64bit OpenSSL 1.0
+#ADD https://www.adobeaemcloud.com/content/companies/public/adobe/dispatcher/dispatcher/_jcr_content/top/download_8/file.res/dispatcher-apache2.4-linux-x86-64-4.1.9.tar.gz /aem/dispatcher/module/
 ADD https://www.adobeaemcloud.com/content/companies/public/adobe/dispatcher/dispatcher/_jcr_content/top/download_10/file.res/dispatcher-apache2.4-linux-x86-64-4.1.11.tar.gz /aem/dispatcher/module/
 WORKDIR /aem/dispatcher/module/
 RUN tar -zxvf *.gz
