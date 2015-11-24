@@ -9,6 +9,10 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install utility for AEM
 ADD aemInstaller.py /aem/aemInstaller.py
 
+# Add the oak-run jar and compaction.sh for compaction
+ADD oak-run-1.2.2.jar /aem/oak-run.jar
+ADD compaction.sh /aem/compaction.sh
+
 RUN apt-get update
 RUN apt-get -y install software-properties-common
 RUN apt-get -y install ipython ipython3

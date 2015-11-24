@@ -23,6 +23,8 @@ WORKDIR /aem/crx-quickstart/bin
 RUN mv quickstart quickstart.original
 ADD resources/quickstart /aem/crx-quickstart/bin/quickstart
 RUN chmod +x /aem/crx-quickstart/bin/quickstart
+RUN chmod +x /aem/compaction.sh
 
 EXPOSE 4502
-ENTRYPOINT ["/aem/crx-quickstart/bin/quickstart"]
+#ENTRYPOINT ["/aem/crx-quickstart/bin/quickstart"]
+ENTRYPOINT ["/aem/compaction.sh"]
