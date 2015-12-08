@@ -4,6 +4,7 @@ import os
 import sys
 import psutil
 from optparse import OptionParser
+from time import sleep
 
 # Argument definition
 usage = "usage: %prog [options] arg"
@@ -30,7 +31,7 @@ port = optDic.setdefault('port','4503')
 # success message has been recieved.
 #
 # Starts AEM installer
-installProcess = subprocess.Popen(['java', '-Xmx1280m', '-XX:MaxPermSize=256m', '-jar', fileName, '-listener-port','50007','-r',runmode,'nosample','-p',port])
+installProcess = subprocess.Popen(['java', '-Xmx1280m', '-XX:MaxPermSize=256m', '-jar', fileName, '-listener-port','50007','-r',runmode,'nosamplecontent','-p',port])
 
 # Starting listener
 import socket
@@ -65,6 +66,9 @@ if os.path.isfile(postInstallHook):
     print "Executing post install hook"
     returncode = subprocess.call(["python", postInstallHook])
     print returncode
+    #sleeping 3 seconds
+    print "Sleeping for 3 seconds..."
+    sleep(3)
 else:
     print "No install hook found"
 
