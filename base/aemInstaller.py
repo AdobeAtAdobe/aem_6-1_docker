@@ -4,6 +4,7 @@ import os
 import sys
 import psutil
 from optparse import OptionParser
+from time import sleep
 
 # Argument definition
 usage = "usage: %prog [options] arg"
@@ -65,6 +66,9 @@ if os.path.isfile(postInstallHook):
     print "Executing post install hook"
     returncode = subprocess.call(["python", postInstallHook])
     print returncode
+    #sleeping 3 seconds
+    print "Sleeping for 3 seconds..."
+    sleep(3)
 else:
     print "No install hook found"
 

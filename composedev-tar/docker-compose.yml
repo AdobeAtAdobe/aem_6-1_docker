@@ -9,6 +9,8 @@ author:
     image: aem_6-1_author
     ports:
         - "4502:4502"
+    links:
+        - publish
 
 dispatcher:
     hostname: www.adobeatadobe.com

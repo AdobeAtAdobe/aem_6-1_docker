@@ -13,7 +13,8 @@ WORKDIR /aem
 RUN java -Djava.awt.headless=true -XX:MaxPermSize=256m -Xmx1280m -jar cq-publish-4503.jar -unpack -r nosamplecontent
 
 # Add customised log file, to print the logging to standard out.
-ADD resources/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install
+ADD resources/org.apache.sling.commons.log.LogManager.config /aem/crx-quickstart/install/org.apache.sling.commons.log.LogManager.config
+ADD resources/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg /aem/crx-quickstart/install/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg
 
 # Installs AEM
 WORKDIR /aem
