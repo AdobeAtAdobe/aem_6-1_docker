@@ -12,6 +12,7 @@ ADD aemInstaller.py /aem/aemInstaller.py
 # Add the oak-run jar and compaction.sh for compaction
 ADD oak-run-1.2.2.jar /aem/oak-run.jar
 ADD compaction.sh /aem/compaction.sh
+ADD org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg /aem/org.apache.jackrabbit.oak.plugins.segment.SegmentNodeStoreService.cfg
 
 RUN apt-get update
 RUN apt-get -y install software-properties-common
