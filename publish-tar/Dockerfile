@@ -7,6 +7,9 @@ MAINTAINER dbenge
 #Copies required build media
 ADD resources/*.jar /aem/cq-publish-4503.jar
 ADD resources/license.properties /aem/license.properties
+ADD resources/postInstallHook.py /aem/postInstallHook.py
+ADD resources/packagelist.txt /aem/packagelist.txt
+ADD resources/packages/*.zip /aem/packages/
 
 # Extracts AEM
 WORKDIR /aem

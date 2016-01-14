@@ -1,12 +1,14 @@
 publish:
     hostname: pub.adobeatadobe.com
     image: aem_6-1_publish
+    mem_limit: 2g
     ports:
         - "4503:4503"
 
 author:
     hostname: author.adobeatadobe.com
     image: aem_6-1_author
+    mem_limit: 2g
     ports:
         - "4502:4502"
     links:
