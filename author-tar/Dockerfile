@@ -8,6 +8,8 @@ MAINTAINER dbenge
 ADD resources/*.jar /aem/cq-author-4502.jar
 ADD resources/license.properties /aem/license.properties
 ADD resources/postInstallHook.py /aem/postInstallHook.py
+ADD resources/packagelist.txt /aem/packagelist.txt
+ADD resources/packages/*.zip /aem/packages/
 
 # Extracts AEM
 WORKDIR /aem
