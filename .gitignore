@@ -1,5 +1,6 @@
 $ cat .gitignore
 # exclude
-cq*.jar
+*.jar
 license.properties
 .DS_Store
+*/resources/packages/
