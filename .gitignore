@@ -4,3 +4,4 @@ $ cat .gitignore
 license.properties
 .DS_Store
 */resources/packages/
+*.swp
