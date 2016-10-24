@@ -1,28 +1,24 @@
 #!/bin/bash
+
+function getinput {
+  while true; do
+	  echo "Put your AEM jar and your license file in ${1}-tar/resources directory."
+      read -p "When ready type y and hit enter? " y
+      case $y in
+          [Yy]* ) break;;
+          * ) echo "Please answer y when your ready to move foward.";;
+      esac
+  done
+}
+
 sh -c 'cd base/ && exec docker build -t aem_6-1_base .'
 echo "done building Base image"
 
-while true; do
-	echo "Put your AEM jar and your license file in publish-tar/resources directory."
-    read -p "When ready type y and hit enter? " y
-    case $y in
-        [Yy]* ) break;;
-        * ) echo "Please answer y when your ready to move foward.";;
-    esac
-done
-
+getinput "publish"
 sh -c 'cd publish-tar/ && exec docker build -t aem_6-1_publish .'
 echo "done building Publisher"
 
-while true; do
-	echo "Put your AEM jar and your license file in author-tar/resources directory."
-    read -p "When ready type y and hit enter? " y
-    case $y in
-        [Yy]* ) break;;
-        * ) echo "Please answer y when your ready to move foward.";;
-    esac
-done
-
+getinput "author"
 sh -c 'cd author-tar/ && exec docker build -t aem_6-1_author .'
 echo "done building Author"
 
