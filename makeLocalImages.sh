@@ -3,9 +3,10 @@
 function getinput {
   while true; do
 	  echo "Put your AEM jar and your license file in ${1}-tar/resources directory."
-      read -p "When ready type y and hit enter? " y
+      read -p "When ready type y and hit enter or q to quit? " y
       case $y in
           [Yy]* ) break;;
+          [Qq]* ) exit 0;;
           * ) echo "Please answer y when your ready to move foward.";;
       esac
   done
