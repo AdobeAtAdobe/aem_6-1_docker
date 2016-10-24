@@ -1,33 +1,31 @@
 #!/bin/bash
-sh -c 'cd base/ && exec docker build -t aem_6-1_base .'
-echo "done building Base image"
 
-while true; do
-	echo "Put your AEM jar and your license file in publish-tar/resources directory."
-    read -p "When ready type y and hit enter? " y
-    case $y in
-        [Yy]* ) break;;
-        * ) echo "Please answer y when your ready to move foward.";;
-    esac
-done
+function getinput {
+  while true; do
+	  echo "Put your AEM jar and your license file in ${1}-tar/resources directory."
+      read -p "When ready type y and hit enter or q to quit? " y
+      case $y in
+          [Yy]* ) break;;
+          [Qq]* ) exit 0;;
+          * ) echo "Please answer y when your ready to move foward.";;
+      esac
+  done
+}
 
-sh -c 'cd publish-tar/ && exec docker build -t aem_6-1_publish .'
-echo "done building Publisher"
+function build {
+  sh -c 'cd '${1}'/ && exec docker build -t aem_6-1_'$(echo ${1} | sed 's/-.*//')' .'
+  echo "done building ${1} container"
+}
 
-while true; do
-	echo "Put your AEM jar and your license file in author-tar/resources directory."
-    read -p "When ready type y and hit enter? " y
-    case $y in
-        [Yy]* ) break;;
-        * ) echo "Please answer y when your ready to move foward.";;
-    esac
-done
+build "base"
 
-sh -c 'cd author-tar/ && exec docker build -t aem_6-1_author .'
-echo "done building Author"
+getinput "publish"
+build "publish-tar"
 
-sh -c 'cd dispatcher-ps/ && exec docker build -t dispatcher_4-1-9 .'
-echo "done building Dispatcher"
+getinput "author"
+build "author-tar"
+
+build "dispatcher-ps"
 
 sh -c 'cd composedev-tar'
 echo 'Now go into composedev-tar and run this command:./start-containers.sh'

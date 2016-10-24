@@ -16,7 +16,7 @@ author:
 
 dispatcher:
     hostname: www.adobeatadobe.com
-    image: dispatcher_4-1-9
+    image: aem_6-1_dispatcher 
     ports:
         - "80:80"
     links:
