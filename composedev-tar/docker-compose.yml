@@ -1,13 +1,13 @@
 publish:
     hostname: pub.adobeatadobe.com
-    image: aem_6-1_publish
+    image: aem_6-2_publish
     mem_limit: 2g
     ports:
         - "4503:4503"
 
 author:
     hostname: author.adobeatadobe.com
-    image: aem_6-1_author
+    image: aem_6-2_author
     mem_limit: 2g
     ports:
         - "4502:4502"
@@ -16,7 +16,7 @@ author:
 
 dispatcher:
     hostname: www.adobeatadobe.com
-    image: aem_6-1_dispatcher 
+    image: aem_6-2_dispatcher 
     ports:
         - "80:80"
     links:
