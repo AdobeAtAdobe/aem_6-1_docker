@@ -1,11 +1,6 @@
-<<<<<<< HEAD
+
 # Docker AEM
-![TrackingImage](https://adobeatadobe.d1.sc.omtrdc.net/b/ss/adbeaaagit/1/H.27.5--NS/0?AQB=1&ndh=1&ce=UTF-8&ns=adobeatadobe&pageName=github%3Aaem_6-1_docker%3Areadme&g=%2FAdobeAtAdobe%2Faem_6-1_docker&ch=github)
 This project holds all our 6.2 AEM docker images we have built so far.  At this time we have only completed and tested the standard tar MK based images.  We will be working to include more as time goes on.
-=======
-# Docker AEM 
-This project holds all our 6.1 AEM docker images we have built so far.  At this time we have only completed and tested the standard tar MK based images.  We will be working to include more as time goes on.  
->>>>>>> 1067912aad979ec2693e6f1a3504afdddf606b44
 
 The easiest way to get start would be to clone this repo then from the cloned root directory run the following command
 ```
