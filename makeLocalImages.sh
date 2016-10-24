@@ -11,19 +11,20 @@ function getinput {
   done
 }
 
-sh -c 'cd base/ && exec docker build -t aem_6-1_base .'
-echo "done building Base image"
+function build {
+  sh -c 'cd '${1}'/ && exec docker build -t aem_6-1_'$(echo ${1} | sed 's/-.*//')' .'
+  echo "done building ${1} container"
+}
+
+build "base"
 
 getinput "publish"
-sh -c 'cd publish-tar/ && exec docker build -t aem_6-1_publish .'
-echo "done building Publisher"
+build "publish-tar"
 
 getinput "author"
-sh -c 'cd author-tar/ && exec docker build -t aem_6-1_author .'
-echo "done building Author"
+build "author-tar"
 
-sh -c 'cd dispatcher-ps/ && exec docker build -t dispatcher_4-1-9 .'
-echo "done building Dispatcher"
+build "dispatcher-ps"
 
 sh -c 'cd composedev-tar'
 echo 'Now go into composedev-tar and run this command:./start-containers.sh'
