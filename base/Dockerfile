@@ -28,8 +28,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 
-RUN apt-get install -y --force-yes oracle-java7-installer
+RUN apt-get install -y --force-yes oracle-java8-installer
 
-ENV JAVA_HOME=/usr/lib/jvm/java-7-oracle/jre/bin/java
-ENV PATH $PATH:/usr/lib/jvm/java-7-oracle/jre/bin/java
+ENV JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre/bin/java
+ENV PATH $PATH:/usr/lib/jvm/java-8-oracle/jre/bin/java
 

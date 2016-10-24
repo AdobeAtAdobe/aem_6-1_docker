@@ -13,7 +13,7 @@ function getinput {
 }
 
 function build {
-  sh -c 'cd '${1}'/ && exec docker build -t aem_6-1_'$(echo ${1} | sed 's/-.*//')' .'
+  sh -c 'cd '${1}'/ && exec docker build -t aem_6-2_'$(echo ${1} | sed 's/-.*//')' .'
   echo "done building ${1} container"
 }
 
