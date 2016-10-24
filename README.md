@@ -1,5 +1,4 @@
 # Docker AEM 
-![TrackingImage](https://adobeatadobe.d1.sc.omtrdc.net/b/ss/adbeaaagit/1/H.27.5--NS/0?AQB=1&ndh=1&ce=UTF-8&ns=adobeatadobe&pageName=github%3Aaem_6-1_docker%3Areadme&g=%2FAdobeAtAdobe%2Faem_6-1_docker&ch=github)
 This project holds all our 6.1 AEM docker images we have built so far.  At this time we have only completed and tested the standard tar MK based images.  We will be working to include more as time goes on.  
 
 The easiest way to get start would be to clone this repo then from the cloned root directory run the following command
@@ -31,3 +30,4 @@ This has only been tested on a Mac system at this point.
 Another note:  If your running these images on your MAC you will need to adjust your Virtual Box memory settings.  The default boot2docker vm image only has 2 gigs alocated for memory and these images need 2 gigs each.  I think I need to come up with a better solution so its easier to use on smaller dev machines.  To alter your Virtal Box memory settings find the Virtual Box app and run it and then select the boot2docker vm and adjust its settings and add memory. 
 In some of the beta versions of Kitematic it will use a VM named dev and not the boot2docker vm image.
 
+![TrackingImage](https://adobeatadobe.d1.sc.omtrdc.net/b/ss/adbeaaagit/1/H.27.5--NS/0?AQB=1&ndh=1&ce=UTF-8&ns=adobeatadobe&pageName=github%3Aaem_6-1_docker%3Areadme&g=%2FAdobeAtAdobe%2Faem_6-1_docker&ch=github)
