@@ -1,2 +1,2 @@
-LoadModule dispatcher_module /aem/dispatcher/module/dispatcher-apache2.4-4.1.11.so
+LoadModule dispatcher_module /aem/dispatcher/module/dispatcher-apache2.4-4.2.1.so
 
